@@ -5,6 +5,7 @@ import { db } from "./config/db";
 import ShortUrl from "./models/ShortUrl";
 
 
+const port = process.env.PORT || 3000;
 const uri = `mongodb+srv://${db.user}:${db.password}@${db.url}/?retryWrites=true&w=majority&appName=${db.database}`;
 mongoose
 	.connect(uri)
@@ -22,7 +23,7 @@ mongoose.connection.on("open", async () => {
 	await ShortUrl.create({ full: "http://google.com", short: "5xr" });
 	await ShortUrl.create({ full: "http://codedamn.com" });
 
-	app.listen(3000, () => {
-        console.log("The application is listening on port 3000!");
+	app.listen(port, () => {
+        console.log(`The application is listening on port ${port}!`);
     });
 });
