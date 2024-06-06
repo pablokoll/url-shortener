@@ -15,7 +15,7 @@ const shortUrlSchema = new Schema({
 	short: {
 		type: String,
 		required: true,
-		default: () => nanoid(8)
+		default: () => nanoid(6).toLowerCase()
 	},
 	clicks: {
 		type: Number,
