@@ -196,7 +196,6 @@ input:not(:placeholder-shown)~label {
     align-items: center;
     justify-content: center;
     color: var(--jungle-mist-700);
-    height: 100%;
     position: absolute;
     margin-right: 0.5rem;
 }
